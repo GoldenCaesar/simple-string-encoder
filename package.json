@@ -1,0 +1,19 @@
+{
+  "name": "simple-string-encoder",
+  "version": "1.0.0",
+  "description": "Encodes & Decodes and Hacks Strings with passwords",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewgeorgemitchell/simple-string-encoder.git"
+  },
+  "author": "Stephen Miller & Andrew Mitchell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewgeorgemitchell/simple-string-encoder/issues"
+  },
+  "homepage": "https://github.com/andrewgeorgemitchell/simple-string-encoder#readme"
+}
