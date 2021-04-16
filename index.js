@@ -4,6 +4,7 @@
     Do not redistribute without prior consent.
 */
 
+const fs = require('fs');
 const decode = require('./decode.js');
 const encode = require('./encode.js');
 
@@ -14,8 +15,18 @@ const Commands = {
       'PASSWORD: Password used to decode string',
     ],
     example: 'decode <STRING_TO_DECODE> <PASSWORD>',
-    exec: (string, pass) => {
+    exec: (string, pass, outputFile) => {
       const result = decode(string, pass);
+      if (outputFile) {
+        // Out put to file
+        const fileName = `${__dirname}/${outputFile}`;
+        fs.writeFile(fileName, result, { flag: 'w' }, (err) => {
+          if (err) {
+            console.log('err:', err);
+          }
+        });
+        return `Written to file: ${fileName}`;
+      }
       return result;
     },
   },
@@ -25,22 +36,42 @@ const Commands = {
       'PASSWORD: Password used to encode string',
     ],
     example: 'encode <STRING_TO_ENCODE> <PASSWORD>',
-    exec: (string, pass) => {
+    exec: (string, pass, outputFile) => {
       const result = encode(string, pass);
+      if (outputFile) {
+        // Out put to file
+        const fileName = `${__dirname}/${outputFile}`;
+        fs.writeFile(fileName, result, { flag: 'w' }, (err) => {
+          if (err) {
+            console.log('err:', err);
+          }
+        });
+        return `Written to file: ${fileName}`;
+      }
       return result;
     },
   },
 };
 
-const [command, string, pass] = process.argv.slice(2);
+const [command, string, pass, outputFile] = process.argv.slice(2);
 
 const commandObjToExec = Commands[command];
 
 // If valid command is entered
 if (commandObjToExec) {
-  if (string && pass) {
+  // If file is detected
+  if (string.includes('./')) {
+    fs.readFile(string, (err, data) => {
+      if (err) {
+        console.log('err:', err);
+      }
+      // Assuming file found
+      const fileString = data.toString();
+      console.log(commandObjToExec.exec(fileString, pass, outputFile));
+    });
+  } else if (string && pass) {
     try {
-      console.log(commandObjToExec.exec(string, pass));
+      console.log(commandObjToExec.exec(string, pass, outputFile));
     } catch (error) {
       console.log('error:', error);
     }
