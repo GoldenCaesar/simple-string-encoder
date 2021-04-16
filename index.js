@@ -11,8 +11,9 @@ const encode = require('./encode.js');
 const Commands = {
   decode: {
     params: [
-      'STRING_TO_DECODE: String to be decode',
+      'STRING_TO_DECODE: String to be decoded or relative path to file',
       'PASSWORD: Password used to decode string',
+      'OUTPUT_FILE: (optional) file to output resulting string to',
     ],
     example: 'decode <STRING_TO_DECODE> <PASSWORD>',
     exec: (string, pass, outputFile) => {
@@ -32,8 +33,9 @@ const Commands = {
   },
   encode: {
     params: [
-      'STRING_TO_ENCODE: String to be encoded',
+      'STRING_TO_ENCODE: String to be encoded or relative path to file',
       'PASSWORD: Password used to encode string',
+      'OUTPUT_FILE: (optional) file to output resulting string to',
     ],
     example: 'encode <STRING_TO_ENCODE> <PASSWORD>',
     exec: (string, pass, outputFile) => {
