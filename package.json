@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/andrewgeorgemitchell/simple-string-encoder/issues"
   },
-  "homepage": "https://github.com/andrewgeorgemitchell/simple-string-encoder#readme"
+  "homepage": "https://github.com/andrewgeorgemitchell/simple-string-encoder#readme",
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
 }
