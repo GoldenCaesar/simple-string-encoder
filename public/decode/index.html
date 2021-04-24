@@ -24,17 +24,13 @@
     <script>
         (() => {
             const textInput = document.querySelector('.textDecodeInput')
-            console.log('textInput:', textInput)
             const passwordInput = document.querySelector('.superDuperPasswordEncde')
-            console.log('passwordInput:', passwordInput)
             const submitButton = document.querySelector('#submitButton')
             const resultDiv = document.querySelector('.result')
 
             submitButton.addEventListener('click', () => {
                 const currentText = textInput.value;
-                console.log('currentText:', currentText)
                 const passwordInputStr = passwordInput.value;
-                console.log('passwordInput:', passwordInputStr)
 
                 // Call API
                 var myHeaders = new Headers();
