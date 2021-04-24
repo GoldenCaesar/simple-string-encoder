@@ -52,7 +52,7 @@
                     redirect: 'follow'
                 };
 
-                fetch("http://localhost:8080/api/decode", requestOptions)
+                fetch("/api/decode", requestOptions)
                     .then(response => response.text())
                     .then(result => resultDiv.innerHTML = result)
                     .catch(error => console.log('error', error));
