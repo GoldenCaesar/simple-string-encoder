@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/decode/index.html">Decode</a>
+        <a href="/encode/index.html">Encode</a>
+    </nav>
+    <h1>Encode your string</h1>
+    <label>String to Encode</label>
+    <input class="textEncodeInput" type="text">
+    <label>Password</label>
+    <input class="passwordEncodeInput" type="text">
+    <button id="submitButton">Submit</button>
+    <h3>Result:</h3>
+    <br>
+    <div class="result"></div>
+    <script>
+        (() => {
+            const textInput = document.querySelector('.textEncodeInput')
+            console.log('textInput:', textInput)
+            const passwordInput = document.querySelector('.passwordEncodeInput')
+            console.log('passwordInput:', passwordInput)
+            const submitButton = document.querySelector('#submitButton')
+            const resultDiv = document.querySelector('.result')
+
+            submitButton.addEventListener('click', () => {
+                const currentText = textInput.value;
+                console.log('currentText:', currentText)
+                const passwordInputStr = passwordInput.value;
+                console.log('passwordInput:', passwordInputStr)
+
+                // Call API
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                    "string": currentText,
+                    "password": passwordInputStr
+                });
+
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: 'follow'
+                };
+
+                fetch("http://localhost:8080/api/encode", requestOptions)
+                    .then(response => response.text())
+                    .then(result => resultDiv.innerHTML = result)
+                    .catch(error => console.log('error', error));
+                })
+        })();
+    </script>
+</body>
+</html>
