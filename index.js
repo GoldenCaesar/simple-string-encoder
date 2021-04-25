@@ -1,7 +1,7 @@
 const express = require('express');
 const decode = require('./decode.js');
 const encode = require('./encode.js');
-const cors = require('cores')
+const cors = require('cors')
 const app = express();
 app.use(express.json());
 app.use(express.static('public'));
