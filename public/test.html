@@ -337,7 +337,57 @@ a.button:hover {
     </nav>
 	
 	<div class="goodLuck">
-
+		<h1>Encode your string</h1>
+		<label class="encodeLabel">String to Encode</label>
+		<textarea class="textEncodeInput" type="text"></textarea>
+		<label class="passwordLabel">Password</label>
+		<input class="passwordEncodeInput" type="text">
+		<button id="submitButton">Submit</button>
+		<h3>Result:</h3>
+		<br>
+		<div class="result"></div>
+	</div>
+	</div>
+		
+		
+		<script>
+			(() => {
+				const textInput = document.querySelector('.textEncodeInput')
+				const passwordInput = document.querySelector('.passwordEncodeInput')
+			const submitButton = document.querySelector('#submitButton')
+			const resultDiv = document.querySelector('.result')
+			
+			submitButton.addEventListener('click', () => {
+				const currentText = textInput.value;
+				const passwordInputStr = passwordInput.value;
+				
+				// Call API
+				var myHeaders = new Headers();
+				myHeaders.append("Content-Type", "application/json");
+				
+				var raw = JSON.stringify({
+					"string": currentText,
+					"password": passwordInputStr
+				});
+				
+				var requestOptions = {
+					method: 'POST',
+					headers: myHeaders,
+					body: raw,
+					redirect: 'follow'
+				};
+				
+				fetch("/api/encode", requestOptions)
+				.then(response => response.text())
+				.then(result => resultDiv.innerHTML = result)
+				.catch(error => console.log('error', error));
+			})
+		})();
+		setTimeout(function(){
+			$("html, body").animate({ scrollTop: 955 }, "slow");
+	}, 6000);
+	//955 $(document).height()
+		</script>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
@@ -367,6 +417,34 @@ a.button:hover {
                     .then(result => $(".goodLuck").append(result))
                     .catch(error => console.log('error', error));
 			}
+
+			function loadEncode() {
+			var EncodeHTML = ""
+				const currentText = EncodeHTML;
+                const passwordInputStr = "1";
+
+                // Call API
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                    "string": currentText,
+                    "password": passwordInputStr
+                });
+
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: 'follow'
+                };
+
+                fetch("/api/encode", requestOptions)
+                    .then(response => response.text())
+                    .then(result => $(".goodLuck").append(result))
+                    .catch(error => console.log('error', error));
+			}
+			
 	</script>
 </body>
 </html>
