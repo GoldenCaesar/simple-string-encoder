@@ -331,42 +331,63 @@ a.button:hover {
 	
     <nav class="site clear">
         <ul>
-				<li><a href="#" onClick = "loadDecode()";>Decode</a></li>
-				<li><a href="#" onClick = "loadEncode();">Encode</a></li>
+				<li><a href="/decode/index.html">Decode</a></li>
+				<li><a href="/encode/index.html">Encode</a></li>
         </ul>
     </nav>
+	<h1>Encode your string</h1>
+	<label class="encodeLabel">String to Encode</label>
+	<textarea class="textEncodeInput" type="text"></textarea>
+	<label class="passwordLabel">Password</label>
+	<input class="passwordEncodeInput" type="text">
+	<button id="submitButton">Submit</button>
+	<h3>Result:</h3>
+	<br>
+	<div class="result"></div>
+</div>
+</div>
 	
-	<div class="goodLuck">
-
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
-		function loadDecode() {
-			var DecodeHTML = "6160,5467,7931,924ăĀĂ,8239,6Č4ĕČ6Ě853,3Ģă4ĦęĖĘĚċĒĘč50Ė,đ8č7ąĠĘ2Ĉ6622ĎČĈ5ŁĲąĝĂ0ļ69Ġ7ŁĤ8ĘŔğĎ00ęŏ3ăċ9ĝ9āĤ9ĴőĆę5ėĠģ1Ĥ3ČĲ15īĴ5ĄŚŸĊČĄňĄŴŪźĶČŃĺĆĄĆņĘă8ŷĮŞĚŏęţěĥŲĚąŸĽĿĜń1Ĉ7ũƒ9ęķč847ăŇ2ŉ4ŋƞŦ8ŭſŮĤě1ĝŕāġģĥħƄ8īėŜįĚĆ8ĎŤřƴĉĻƉćĄƌĕƏŝĒƓǋƖű1ųŵǕĢŹ0ŻċĲƶƁǢŸĩ1ƆƣŀƥĶĴčƕĤ7ƫĒǶĠœơǥƾŰǁďđǕĴĉœĥďņďƦĪžƮĕƪİƺĞƽǶǶĄŊĚƞƷƐǘǰŌĠƳǺǇĻĿŁŃŇ9ǊƇĠƩƫŹĵ3ǶǵǷƀǟƭĹǽǶŚȗưȓȠǌǗǈ6Ǌ3ŏȬƏȺƬƊƒłǱ0ĝɉȵŪſǜǞŶǡĳǣĉǽȷɒǩƄǬǏƈȤǓŦǠŸɁǯƔǌɕƙ4ŸɤģɦŠɐȆƜĉȴȡȅėĞċĚėĈǫȧĢŃĦĳĎĐƍŚǊɃƿŕɾŀɍ8ĢɨāăżƨąǼŽɝ5ǨəǤŽēɊǒƼȠŚęŒɼ5ȘʑʅɆȍĲɋȟĕʔǾĚǹĚŚȠĘŋʖșţžȩńšɸȻćŒȯŃʦɻŔǅșȒȱ7ǵȆɤʮƟĿƚǑƋɳʽˍȇľˆşŧ˟ʏƸȚǔȫɽƸʻĕˏɩıʱɛŽɑʬȽˌǴȜɂɄʰƎǡ˵ʳȦɎɐȴʞȶɔƘ̆ɗɰƃʘ˲̊ɟʂʷȭǘɍɅŐˢ˛ǂƔʨ̏ɋˌĬŜʿěˁȨǊɴ̙ɪ˂Ǌǃ3ǭŏʸˉƹĝ̐ɑˈǺƞ̗őǐʆĨŚƻǖʿˌʴ˒ƸĢŗɾͅĕŁ̄ȻūɅǚťˤʍŔȐɌʯ̘̀ǒĩǃřśĚʿ̎Ģƪ˳ǦȎ̐ʠͥ͠Ĕɤ̨̎ʣȾ̫ͱʪŰȈ͗ʵʬ̙͏Ȭʚɠʃūǀʇͮ˞Ͱ͢ͽ̎ʝʟ̍ǽͰɱŏ̧Ņͫʗǽͣʛͦɖɟ̎΍ʳƞƴĐ̙˾̌ĵĸŁɢŭɋɲş˞ʹ˄ĝ̺ɧ˥Ŗͷ̶̨ǙȁăίɝΤŃđɏ;Ąʄ΁ȑƻ͌Πāμ̿ĄǶɰǧȶ΋ʜƶŬʈȂ͇ͯˠņΏ͋Οά˶ŋʀƗǝɞΡΙɜύƂɚΈϦϤʜϋɞ͢υʝϒίɭʝȘʓ͹5ϭΉώϨϥͧΊϽϐϿϼʡΗɞͩΚϖ̛̽͞ʩɶͶǻ͚ͪȥɍν͍ƬČŗƽŦ͟Ϝʭ̂ιϑ͐ίΚȣɋ͜īχ̩Ǚ͊ˌ˪̔ɿȱЍ˟̷ͷЮȆа̓ǉ˺̪ηͱ͔ϗːŢˤάϣ͖͢5ρа̳ͳȕȼƱȒțɩǙʴɺɁ˖̦̂ΦȏȮĳȰȲͺǨхϰǨϣЈϾΘѧЂѩϏІͨѭ̞ǒѕфǐы˭СͧȘўˋʋ˟ɷ̈́Ͷ˪ɷњ̡ˀč̪Ƨ̩͑ʹБΚ̣˱ѻˮĭ҂ǁ̈́Ѡ˪̪˗Мʩ̅Ǩ҉оεȞ̂ǥơю˗ʴЮǐјʒЪГЌҤϊĺϮȆқѾАңɀǇењț̶ʹґзɼˌӀѽάѿѷҁ̼Ͷ҄˯ƞ҈ǲĕЪїʳ˚аϹҲБΕͪϻϧЅ̏ЀӞӜϫѮΊΣҭ̼ǁҟΫҝώĵδȴ̪҄ċ̯ŜҌȚѢӰӶˑʰҔʇЖͪͰ̤ĲĴˋˏӽĒѷҗǐҙң̝˵ҞӐҠӰєңΑȕДŃҨŘ˪ҫˋҭ̅ЧȌҰӗɰѢиҭЏˡ˗цԋǙˌίә͖˗ФԠ͛Ԣ̝њҰ҅ԤӟЄӛϪѪӤԾϩЃӝԀЊөԷНԩĿϟ̎хβҚӫˇζʉĥʰьɤԯǁϱУӼΌЦԶ͝λЫǰЭԛѵԲϟҵάеԫԛи͖кɃмՕȂ̓ЊАƲфиɈΔшъшϙӁ͵Ԫ̂ϷŻӬЎӂѤǟΆͤՄѬЁՂՆ֑ЇѰӢґӯՔǰӲ̮ĉǮӺ̴Ӹˇ֢՗͙ӨӾωҵрҙΝӍȒծǇҩƈыȚḬ̑֠ծѷ՘ҺǙ҉քΰчȮрЋоΞŋՈʇֈќƬρѯɚӚԼԂ̑ȌͰѦԄĶėԥǟט֓Խ֕Ѩ֗ן֙֘ՀצՅˊӑΥԇǱĸέѡӭԞ׬ӹˉԹΑѓǰ҉԰љ́ЕωԏԾШ̏ʭΝԛюϝтͲЯшי͊؁ƦӐЋ֭նθѠɩл׌Լץפק؝שՁנӣآءʝʳ˭ɺ،ּ̘ׄϵȽӄȄӆАӈˡ҂ӋփӍˁӏׯ˹Ҿ̲ӎл˵ѺſҎĔה֚ɀϖֻōװɑЋ؃ҰїЙͱլ˕П̖ʰщ΀ыֳӅҪٗˋŘĂŕҊגϺ؞ӡ٨Կؠר֒٩٬؟Θ̒ɺʝٓҨٞɣɋؽΌϟ˗ґҼѥƏإ٪֖אٯٮ٫ڈڅӥʅҕيҿلȹԋʹӃſ׹Ūǔ҅ɩڐ˃̨՝Ŏ͙ڒֵՑРطͧٓƎȄոƿ֮ȒׁӖָ٦Әؙʶ؛ڄעچډףڇڻںڹڅɋ͊҉ه׾ѼȄӓѲԕƠ˟Ұ׀ӅٖدיִȬՑϟגſښبѴֵԲ؆Ȕթׄۖӳͷ؉˸ҹƑهۘڵՀփۏʫѺےʶƢֺє˭کȪԵĈ˸ۛɇǡ؃8ƫĹɶՉ͝ҵκƏ҅4כϮΔ·ڸӠھܐڋՃ܏ܔѫڽՏȴ˦ɥΪۋخ̴ۭرɹΑͩ؃ٵůϚŋл6лίӿٕɼѿƲԖǮֿӐа۳ŜєǇ҉؛϶ڵ٧ٰڼڿܕסܗ݄݇ܒ݅أ؜ŸцՌ؊ҰܹƤؑׯӖۘЪӚЉƿѿۊơиڤɍլ̅ǔьЮ؈ʭۖڵځɘ٭ܘ݋ڃܑ݂ܖ֔݌ڷܗӖےۮօĿشơӊˡӌĭκݙ܎˴˕ΨǔδݐɑةݠʐȚϙتƬ؎җݤɦ̈́ӼȆ֏Ζؤݮ݈ݵݱڊݰѰ7ͣ҆ҒƦ܋̵܍֐ޤٱݯ݉ݴޞްޠΠβΩ˘؄دփհɼծև޾ݼ؊΅ېѐτϛ֩̾ؼ˞ڟ֧őȹю˹ݚޯ݃݊޲݆ޡޟߗߚ޵ہѠݧ͎̟ѽіȣϒߔϐ˃͊ґԁ˚͊Աѝ׏ƃߨߝߖ޳ݍݳߙ޴߶ߺئʥѽګƸє۞őձѝָ4ŴǊ߾ĈۂӐۄۉʒѽۈԘ޺άҰ˹ڶݲܓ߽ݷߵ߹ݶࠛޤΣɈߊ؊ۃĴŔڂיّڏˉхݫםࠫ޵ߜ߻ࠠޢޱࠟࠜأՐʐևԆ֡׶޽ƽׅАϟࠉщآɑܛ׭ׇ۲ހݟӂшݬ̌࠴߷ࠞ࠶࠻࠸ѯĵ؃٣ťǌڲόࠢߘࠡޣࡥ࡛࠵ࠌ˺ߡʤݽٌࡢЇſі࠮ŭےϰρؓࠄʷُȌښҺҐ۪ϸƶك˃ׁ߀ʒ߂сь߅ۯȽݦυ׭Ӫ˅דۖކ࠺ߕ࠷ߛࡗࡤ࢘ࡥ׻Ӽƣԝгܾ޼ࢆࢊ҃ࠬۼ׍ʺࡰŘߎϳ̉ࢄࢦ̬ࢨӋࢪǎޓࢭ۔ƽٚˋ۝ڮ؇Ȗ؉әͽד˱Ի݁ࡧ࡙࢙࡚࢛࢞࣌Նݣߢ߿ڪըֵ܈ߤ׸ҺҌԉ˓ћࣄՎΌ̣лӿՏޏࠂݢՓȝƔՖ԰Ț̟ŘЋࢾ˫ٔԎѵݡŃّҐݥӎ˭ܬմڹܦࢳܠࢧȔݐԫ۲֊ީұࡣ࣋࣎ࡨ࣑ࡦ࠹ऐࠟ֬׊Иɦ԰घͪӚڛࡂڝԖࡐ˲مĒࣥ؀ΌजِԎ܃Ӿࡾʶ˰ˁ׀ࡏƈЋхࣆϙؓݞαɾِܤϙ࠘ǌХۨڜΐۋضށۘϰϭऀ̬݀Ҳ߸࣐ࡖࠝ࢝क޻ή˽֍̋ओ޶॑ȹާה҅ࡱ्͸ɰ࣊औߎ˹ގܱҕبֺܴҿ؎՘͡ǽũʁŏ7"
-				const currentText = DecodeHTML;
-                const passwordInputStr = "1";
-
-                // Call API
-                var myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-
-                var raw = JSON.stringify({
-                    "string": currentText,
-                    "password": passwordInputStr
-                });
-
-                var requestOptions = {
-                    method: 'POST',
-                    headers: myHeaders,
-                    body: raw,
-                    redirect: 'follow'
-                };
-
-                fetch("/api/decode", requestOptions)
-                    .then(response => response.text())
-                    .then(result => $(".goodLuck").append(result))
-                    .catch(error => console.log('error', error));
-			}
+		(() => {
+			const textInput = document.querySelector('.textEncodeInput')
+			console.log('textInput:', textInput)
+			const passwordInput = document.querySelector('.passwordEncodeInput')
+			console.log('passwordInput:', passwordInput)
+		const submitButton = document.querySelector('#submitButton')
+		const resultDiv = document.querySelector('.result')
+		
+		submitButton.addEventListener('click', () => {
+			const currentText = textInput.value;
+			const passwordInputStr = passwordInput.value;
+			
+			// Call API
+			var myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+			
+			var raw = JSON.stringify({
+				"string": currentText,
+				"password": passwordInputStr
+			});
+			
+			var requestOptions = {
+				method: 'POST',
+				headers: myHeaders,
+				body: raw,
+				redirect: 'follow'
+			};
+			
+			fetch("/api/encode", requestOptions)
+			.then(response => response.text())
+			.then(result => resultDiv.innerHTML = result)
+			.catch(error => console.log('error', error));
+		})
+	})();
+	setTimeout(function(){
+		$("html, body").animate({ scrollTop: 955 }, "slow");
+}, 6000);
+//955 $(document).height()
 	</script>
 </body>
 </html>
