@@ -348,10 +348,6 @@ a.button:hover, button:hover {
 		<h3>Result:</h3>
 		<br>
 		<div class="result"></div>
-	</div>
-	</div>
-		
-		
 		<script>
 			(() => {
 				const textInput = document.querySelector('.textEncodeInput')
@@ -391,6 +387,8 @@ a.button:hover, button:hover {
 	//955 
 		</script>
 	</div>
+	</div>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		function loadDecode() {
@@ -416,7 +414,7 @@ a.button:hover, button:hover {
                 };
 
                 // fetch("/api/decode", requestOptions)
-				fetch("https://n-code.herokuapp.com/api/decode", requestOptions)
+				fetch("/api/decode", requestOptions)
                     .then(response => response.text())
                     .then(result => $("goodLuck").append(result))
                     .catch(error => console.log('error', error));
@@ -447,7 +445,7 @@ a.button:hover, button:hover {
                 };
 
                 // fetch("/api/decode", requestOptions)
-				fetch("https://n-code.herokuapp.com/api/decode", requestOptions)
+				fetch("/api/decode", requestOptions)
                     .then(response => response.text())
                     .then(result => $("goodLuck").append(result))
                     .catch(error => console.log('error', error));
