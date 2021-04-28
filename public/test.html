@@ -416,7 +416,7 @@ a.button:hover, button:hover {
                 // fetch("/api/decode", requestOptions)
 				fetch("/api/decode", requestOptions)
                     .then(response => response.text())
-                    .then(result => $("goodLuck").append(result))
+                    .then(result => $("goodLuck").innerHTML = result)
                     .catch(error => console.log('error', error));
 			}
 
@@ -447,7 +447,7 @@ a.button:hover, button:hover {
                 // fetch("/api/decode", requestOptions)
 				fetch("/api/decode", requestOptions)
                     .then(response => response.text())
-                    .then(result => $("goodLuck").append(result))
+                    .then(result => $("goodLuck").innerHTML = result)
                     .catch(error => console.log('error', error));
 			}
 			
