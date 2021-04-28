@@ -416,10 +416,11 @@ a.button:hover, button:hover {
                 };
 
                 // fetch("/api/decode", requestOptions)
-				fetch("https://n-code.herokuapp.com/api/decode", requestOptions)
+				fetch("/api/decode", requestOptions)
                     .then(response => response.text())
                     .then(result => $(".goodLuck").innerHTML = result)
                     .catch(error => console.log('error', error));
+					// $(".goodLuck").append(result);
 			}
 
 			function loadEncode() {
@@ -446,10 +447,11 @@ a.button:hover, button:hover {
                 };
 
                 // fetch("/api/decode", requestOptions)
-				fetch("https://n-code.herokuapp.com/api/decode", requestOptions)
+				fetch("api/decode", requestOptions)
                     .then(response => response.text())
                     .then(result => $(".goodLuck").innerHTML = result)
                     .catch(error => console.log('error', error));
+					// $(".goodLuck").append(result);
 			}
 			
 	</script>
