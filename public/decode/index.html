@@ -16,7 +16,7 @@
     <label>String to Decode</label>
     <input class="textDecodeInput" type="text">
     <label>Password</label>
-    <input class="superDuperPasswordEncde" type="text">
+    <input class="superDuperPasswordEncode" type="text">
     <button id="submitButton">Submit</button>
     <h3>Result:</h3>
     <br>
@@ -24,17 +24,13 @@
     <script>
         (() => {
             const textInput = document.querySelector('.textDecodeInput')
-            console.log('textInput:', textInput)
-            const passwordInput = document.querySelector('.superDuperPasswordEncde')
-            console.log('passwordInput:', passwordInput)
+            const passwordInput = document.querySelector('.superDuperPasswordEncode')
             const submitButton = document.querySelector('#submitButton')
             const resultDiv = document.querySelector('.result')
 
             submitButton.addEventListener('click', () => {
                 const currentText = textInput.value;
-                console.log('currentText:', currentText)
                 const passwordInputStr = passwordInput.value;
-                console.log('passwordInput:', passwordInputStr)
 
                 // Call API
                 var myHeaders = new Headers();
@@ -52,7 +48,7 @@
                     redirect: 'follow'
                 };
 
-                fetch("http://localhost:8080/api/decode", requestOptions)
+                fetch("/api/decode", requestOptions)
                     .then(response => response.text())
                     .then(result => resultDiv.innerHTML = result)
                     .catch(error => console.log('error', error));

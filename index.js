@@ -1,11 +1,11 @@
 const express = require('express');
 const decode = require('./decode.js');
 const encode = require('./encode.js');
-
+const cors = require('cors')
 const app = express();
-
 app.use(express.json());
 app.use(express.static('public'));
+app.use(cors())
 
 app.get('/api/', (_req, res) => {
   res.send('hello world');
