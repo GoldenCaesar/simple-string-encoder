@@ -313,7 +313,7 @@ a.button:hover, button:hover {
       <header class="site clearfix">
       <div class="col one">
           <p>Demicube, INC</p>
-      <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81pL8qzIFNqhowVxg10YP5vNRlDlcbSLB-70SHPYYlsvVlqg7_QDeJsONVSxQqB8CLwOBYj9Ndh9J1CEsuXPGEwhjmuiWg29dlZw8P8_Zulc5EW-eARdPRpdgRSi=w1920-h936" width="740" height="729" id="logo-v" />
+      <img src="assets/demicube.png" width="740" height="729" id="logo-v" />
       </div>
           <div class="col two">
               <h4>Demicube, INC (tm) <br /> <b>H</b>ash <b>E</b>ncrypted <b>R</b>eal-Time <b>O</b>perating <b>S</b>ystem (HEROS)</h4>
@@ -343,6 +343,7 @@ a.button:hover, button:hover {
         <button id="clearBtn">Clear</button>
         <h3>Result:</h3>
         <br>
+        <p class="copymessage" id=""></p>
         <p class="result" id=""></p>
         </div>
       </div>
@@ -500,14 +501,111 @@ $(function() {
   document.getElementById("decodeButton").addEventListener("click", function() {
     goldHash(true)
 });
+
+
+
+
+
+
+// $('#copyBtn').click(function () {
+//   $(".result").select();
+//   document.execCommand("copy");
+// });
+
+
+// The provided selectText function (unchanged)
+function selectText(nodeId) {
+    const node = document.getElementById(nodeId);
+
+    if (document.body.createTextRange) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(node);
+        range.select();
+    } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    } else {
+        console.warn("Could not select text in node: Unsupported browser.");
+    }
+}
+
+// Your existing jQuery click handler, modified
 $('#copyBtn').click(function () {
-  $(".result").select();
-  document.execCommand("copy");
+    // 1. Get the .result div and ensure it has an ID for selectText to work
+    // If your .result div already has an ID, use that.
+    // If not, we'll temporarily give it one or find another way.
+    // Let's assume for this example that the .result div does NOT have an ID initially,
+    // so we'll get it by class and then pass the actual DOM node.
+
+
+                // Set the message in the .copymessage paragraph
+            $(".copymessage").text("Text copied to clipboard!");
+
+            // Optional: Clear the message after a few seconds
+            setTimeout(function() {
+                $(".copymessage").text(""); // Revert to original or clear
+            }, 3000); // Message disappears after 3 seconds
+
+    const resultDiv = document.querySelector(".result");
+
+    if (resultDiv) {
+        // We'll modify selectText slightly to accept a direct DOM node
+        // instead of an ID, as that's cleaner for your use case here.
+        // This is a common pattern for helper functions.
+
+        // Re-defining selectText to directly accept a node for this specific use case,
+        // so you don't have to worry about IDs.
+        // If you MUST use the original selectText that takes an ID,
+        // then you'd need to ensure your .result div has a unique ID,
+        // e.g., <div class="result" id="myResultDiv">
+        // and then call selectText('myResultDiv');
+
+        function selectTextDirectNode(node) {
+            if (document.body.createTextRange) {
+                const range = document.body.createTextRange();
+                range.moveToElementText(node);
+                range.select();
+            } else if (window.getSelection) {
+                const selection = window.getSelection();
+                const range = document.createRange();
+                range.selectNodeContents(node);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            } else {
+                console.warn("Could not select text in node: Unsupported browser.");
+            }
+        }
+
+        // Call the modified selectText function with the actual .result div element
+        selectTextDirectNode(resultDiv);
+
+        // 2. Now that the text is selected, execute the copy command
+        document.execCommand("copy");
+
+        // Optional: Provide feedback to the user that text has been copied
+        
+
+    } else {
+        console.error("'.result' div not found.");
+    }
 });
+
+
+
+
+
+
+
+
+
 $("#clearBtn").click(function () {
   $("#str").val('');
   $("#pass").val('');
-  $(".result").val();
+  $(".result").text("");
+  $(".copymessage").text("");
 });
 // tvRepair();
 setTimeout(function(){
