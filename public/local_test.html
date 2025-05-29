@@ -710,7 +710,7 @@ async function goldHash(d) {
     let animationSkipped = false; // Flag to control skipping
 
     
-    const compressor = new RLECompressor();
+
       
     // Clear previous results and messages
     resultDiv.empty();
@@ -721,9 +721,7 @@ async function goldHash(d) {
         try {
             if (d) { // True for decode
                 outputText = await ddCode(inputText, password);
-                outputText = await compressor.decompress(outputText);
             } else { // False for encode
-                inputText = await compressor.compress(inputText);
                 outputText = await nnCode(inputText, password);
             }
         } catch (e) {
