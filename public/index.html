@@ -10,7 +10,13 @@
             background-color: #00290c;
             font-family: Consolas, monaco, monospace;
             color: #19e98f;
+            /* Ensure no default margin/padding for easier calculations */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrollbar on mobile */
         }
+
+        /* Desktop styles (unchanged as per request) */
         iframe {
             position: fixed;
             left: 25.5%;
@@ -23,8 +29,9 @@
             border-color: #19e98f;
             border-width: unset;
         }
+
         .bodyDiv {
-            background: url(./computer.png) no-repeat center center fixed; 
+            background: url(./computer.png) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -35,11 +42,13 @@
             width: 62%;
             height: 100%;
         }
+
         .encodeLabel {
             position: fixed;
             left: 27%;
             top: 8.5%;
         }
+
         .textEncodeInput {
             position: fixed;
             left: 26%;
@@ -52,11 +61,13 @@
             border-color: #19e98f;
             border-width: unset;
         }
+
         .passwordLabel {
             position: fixed;
             left: 27%;
             top: 68.5%;
         }
+
         .passwordEncodeInput {
             position: fixed;
             left: 26%;
@@ -69,46 +80,96 @@
             border-color: #19e98f;
             border-width: unset;
         }
+
         $green: #18BC9B;
 
-::-webkit-scrollbar {
-  background: rgba($green, 0.2);
-  height: 16px;
-  width: 16px;
+        ::-webkit-scrollbar {
+            background: rgba($green, 0.2);
+            height: 16px;
+            width: 16px;
 
-  &:disabled {
-    background: transparent;
-  }
-}
+            &:disabled {
+                background: transparent;
+            }
+        }
 
-::-webkit-scrollbar-track {
-  height: 20px;
-  width: 20px;
-}
+        ::-webkit-scrollbar-track {
+            height: 20px;
+            width: 20px;
+        }
 
-::-webkit-scrollbar-thumb {
-  background: rgba($green, 0.6);
-  border-radius: 20px;
+        ::-webkit-scrollbar-thumb {
+            background: rgba($green, 0.6);
+            border-radius: 20px;
 
-  &:hover {
-    background: rgba($green, 0.75);
-  }
+            &:hover {
+                background: rgba($green, 0.75);
+            }
 
-  &:active {
-    background: rgba($green, 0.9);
-  }
-}
+            &:active {
+                background: rgba($green, 0.9);
+            }
+        }
 
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba($green, 0.2);
-}
+        ::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba($green, 0.2);
+        }
+
+        /* --- */
+
+        /* Mobile styles using media queries */
+        @media (max-width: 1900px) { /* Adjust max-width as needed for your definition of mobile */
+            .bodyDiv {
+                display: none;
+                /* For mobile, you might want the background image to take full width */
+                left: 0;
+                width: 100%;
+                /* You might adjust height or background-size for better fit on mobile */
+                background-size: contain; /* or '100% 100%' or 'auto' depending on desired look */
+                background-repeat: no-repeat;
+                background-position: center top; /* Center image at the top */
+                height: 50vh; /* Adjust height for the image to not take up entire screen */
+                position: relative; /* Change to relative for better flow on mobile */
+            }
+
+            iframe {
+                position: absolute; /* Change to relative for better flow on mobile */
+                left: 5%; /* Adjust left to center or give some padding */
+                top: 5%; /* Add some top margin */
+                width: 90%; /* Make iframe almost full width */
+                height: 90%; /* Set a fixed height or use vh for responsive height */
+                margin-bottom: 20px; /* Add space below iframe */
+                /* Adjust border-radius if needed for mobile */
+            }
+
+            .encodeLabel,
+            .passwordLabel {
+                position: relative; /* Change to relative for better flow on mobile */
+                left: 5%;
+                top: unset; /* Remove fixed top */
+                margin-top: 20px; /* Add some space above */
+            }
+
+            .textEncodeInput,
+            .passwordEncodeInput {
+                position: relative; /* Change to relative for better flow on mobile */
+                left: 5%;
+                width: 90%;
+                top: unset; /* Remove fixed top */
+                margin-top: 10px; /* Add some space above */
+                height: auto; /* Allow height to adjust based on content for text area */
+                min-height: 150px; /* Minimum height for text area */
+            }
+
+            .passwordEncodeInput {
+                min-height: 40px; /* Minimum height for password input */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="bodyDiv">
     </div>
-    <iframe src="/local_test.html" height="200" width="300" title="Iframe Example"></iframe>
-
-
+    <iframe src="/public/local_test.html" height="200" width="300" title="Iframe Example"></iframe>
 </body>
 </html>
